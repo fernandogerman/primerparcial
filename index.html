@@ -8,14 +8,16 @@
 <h2>Fundamentos de Git</h2>
 
 <p>Entonces, ¿qu&eacute; es Git en pocas palabras? Es muy importante asimilar esta secci&oacute;n, porque si entiendes lo que es Git y los fundamentos de c&oacute;mo funciona, probablemente te sea mucho m&aacute;s f&aacute;cil usar Git de manera eficaz. A medida que aprendas Git, intenta olvidar todo lo que puedas saber sobre otros <acronym title="Sistema de Control de Versiones">VCSs</acronym>, como Subversion y Perforce; hacerlo te ayudar&aacute; a evitar confusiones sutiles a la hora de utilizar la herramienta. Git almacena y modela la informaci&oacute;n de forma muy diferente a esos otros sistemas, a pesar de que su interfaz sea bastante similar; comprender esas diferencias evitar&aacute; que te confundas a la hora de usarlo.</p>
-Instant&aacute;neas, no diferencias
+<h2>Instant&aacute;neas, no diferencias</h2>
 
 <p>La principal diferencia entre Git y cualquier otro VCS (Subversion y compa&Ntilde;&iacute;a incluidos) es c&oacute;mo Git modela sus datos. Conceptualmente, la mayor&iacute;a de los dem&aacute;s sistemas almacenan la informaci&oacute;n como una lista de cambios en los archivos. Estos sistemas (CVS, Subversion, Perforce, Bazaar, etc.) modelan la informaci&oacute;n que almacenan como un conjunto de archivos y las modificaciones hechas sobre cada uno de ellos a lo largo del tiempo, como ilustra la Figura 1-4.</p>
+<img src="imagenes/img1.png"/>
 
 Figura 1-4. Otros sistemas tienden a almacenar los datos como cambios de cada archivo respecto a una versi&oacute;n base.
 
 <p>Git no modela ni almacena sus datos de este modo. En cambio, Git modela sus datos m&aacute;s como un conjunto de instant&aacute;neas de un mini sistema de archivos. Cada vez que confirmas un cambio, o guardas el estado de tu proyecto en Git, &eacute;l b&aacute;sicamente hace una foto del aspecto de todos tus archivos en ese momento, y guarda una referencia a esa instant&aacute;nea. Para ser eficiente, si los archivos no se han modificado, Git no almacena el archivo de nuevo, s&oacute;lo un enlace al archivo anterior id&eacute;ntico que ya tiene almacenado. Git modela sus datos m&aacute;s como en la Figura 1-5.</p>
 
+<img src="imagenes/img2.jpg"/>
 
 <h2>Figura 1-5. Git almacena la informaci&oacute;n como instant&aacute;neas del proyecto a lo largo del tiempo.</h2>
 
@@ -48,8 +50,9 @@ Los tres estados
 
 Ahora presta atenci&oacute;n. Esto es lo m&aacute;s importante a recordar acerca de Git si quieres que el resto de tu proceso de aprendizaje prosiga sin problemas. Git tiene tres estados principales en los que se pueden encontrar tus archivos: confirmado (committed), modificado (modified), y preparado (staged). Confirmado significa que los datos est&aacute;n almacenados de manera segura en tu base de datos local. Modificado significa que has modificado el archivo pero todav&iacute;a no lo has confirmado a tu base de datos. Preparado significa que has marcado un archivo modificado en su versi&oacute;n actual para que vaya en tu pr&oacute;xima confirmaci&oacute;n.
 
-Esto nos lleva a las tres secciones principales de un proyecto de Git: el directorio de Git (Git directory), el directorio de trabajo (working directory), y el &aacute;rea de preparaci&oacute;n (staging area).
+<p>Esto nos lleva a las tres secciones principales de un proyecto de Git: el directorio de Git (Git directory), el directorio de trabajo (working directory), y el &aacute;rea de preparaci&oacute;n (staging area).</p>
 
+<img src="imagenes/img3.png"/></br>
 
 Figura 1-6. Directorio de trabajo, &aacute;rea de preparaci&oacute;n y directorio de Git.
 
